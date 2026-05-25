@@ -12,10 +12,20 @@ from aiogram.types import (
 )
 from dotenv import load_dotenv
 
+# ===== LOAD ENV =====
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 BUG_CHANNEL_ID = os.getenv("BUG_CHANNEL_ID")
+
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN is missing")
+
+if not BUG_CHANNEL_ID:
+    raise ValueError("BUG_CHANNEL_ID is missing")
+
+BUG_CHANNEL_ID = int(BUG_CHANNEL_ID)
+
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
