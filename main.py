@@ -26,7 +26,7 @@ if not BUG_CHANNEL_ID:
 
 BUG_CHANNEL_ID = int(BUG_CHANNEL_ID)
 
-
+# ===== BOT =====
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
@@ -141,7 +141,7 @@ async def handle_bug_text(message: Message):
 
 
 
-
+# ===== Polling =====
 
 async def main():
     print("Bot started")
